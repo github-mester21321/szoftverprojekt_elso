@@ -1,48 +1,36 @@
-# from tkinter import *
+from tkinter import *
 
-# root = Tk()
+root = Tk()
+root.title("Választék")
 
+ertek = Entry(root, width=30, borderwidth=4)
+ertek.pack()
 
-# e = Entry(root, width=50, borderwidth=10)
-# e.pack()
-# e.insert(0, "Hogy hívnak?")
+#valtozok letrehozasa
+felsorolas = ["gramm", "dekagramm", "kilogramm", "mázsa", "tonna"]
+mertekegyseg_valtoszam = [["gramm", 1], ["dekagramm", 10], ["kilogramm", 1000], ["mázsa", 100000], ["tonna", 1000000]]
 
-
-# def atvalto_fuggveny():
-#     hello = e.get()
-#     myLabel = Label(root, text=hello)
-#     myLabel.pack()
-
-
-# myButton = Button(root, text="",command=atvalto_fuggveny)
-
-
-# myButton.pack()
-
-# root.mainloop()
+#dropdown menu
+clicked = StringVar()
+# clicked.set(felsorolas[0])
+drop = OptionMenu(root, clicked, *felsorolas)
 
 
-
-from tkinter import ttk #, messagebox
-import tkinter as tk
-
-def selection_changed(event):
-    mertekegyseg_1 = combo.get()
-    hany_index = int(mertekegyseg_valtoszam.index(mertekegyseg_1))
-    valto_csomag_1 = [mertekegyseg_1, hany_index]
-    # messagebox.showinfo(
-    #     title="New Selection",
-    #     message=f"Selected option: {valasztott_1}"
-    # )
-
-main_window = tk.Tk()
-main_window.config(width=500, height=300)
-main_window.title("Választék")
-combo = ttk.Combobox(values=["gramm", "dekagramm", "kilogramm", "mázsa", "tonna"])
-mertekegyseg_valtoszam = [1, 10, 1000, 100_000, 1000_000]
-combo.bind(selection_changed)
-combo.place(x=5, y=5)
-main_window.mainloop()
+def bekeres():
+    bekert_ertek = ertek.get()
+    # myLabel = Label(root, text=bekert_ertek)
+    # myLabel.pack()
+    if float(bekert_ertek) % 1 == 0:
+        bekert_ertek = int(bekert_ertek)
+    else:
+        bekert_ertek = "Nem jól adtad meg a számot."
+    
+    myLabel = Label(root, text=bekert_ertek).pack()
+    myLabel2 = Label(root, text=clicked.get()).pack() #ez a verzió (.pack()) a parancs végén ugyanaz mintha külön sorban odaírnáh, hogy myLabel.pack()
 
 
+drop.pack()
+myButton = Button(root, text="Bevitel",command=bekeres)
+myButton.pack()
 
+root.mainloop()
