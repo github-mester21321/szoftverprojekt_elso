@@ -29,8 +29,11 @@ def bekeres():
     myLabel2 = Label(root, text=clicked.get()).pack() #ez a verzió (.pack()) a parancs végén ugyanaz mintha külön sorban odaírnáh, hogy myLabel.pack()
 
 
-drop.pack()
+
 myButton = Button(root, text="Bevitel",command=bekeres)
+
+# kicsomagolás, kibontás, kiiratás
+drop.pack()
 myButton.pack()
 
 root.mainloop()
