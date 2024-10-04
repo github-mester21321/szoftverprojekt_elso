@@ -48,6 +48,9 @@ e.pack()
 dropelso = OptionMenu( root , clicked , *options2 ) 
 dropelso.pack()
 
+mertekegysegek = ["miliméter","centiméter","deciméter","méter", "kilóméter"]
+atvaltok = [0.0001,  0.01  ,0.1  ,1  ,1000  ]
+
 megadottertek = e.get()
 def szamolo():
     print(megadottertek)
