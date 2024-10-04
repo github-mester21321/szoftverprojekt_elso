@@ -32,12 +32,12 @@ clicked = StringVar()
 clicked.set( "Mértékegységek" ) 
   
 # Create Dropdown menu 
-atvaltani = Label(root, text="Írja ide az átváltani kívánt hosszt: ")
+atvaltani = Label(root, text="Írja ide az átváltani kívánt hosszt: ", width=150, font=('Times New Roman', 15, 'bold') )
 atvaltani.pack()
 drop1 = OptionMenu( root , clicked , *options ) 
 drop1.pack() 
 
-atvalott = Label(root, text="Az Átváltott hossz: ")
+atvalott = Label(root, text="Az Átváltott hossz: ", width=150, font=('Times New Roman', 15, 'bold') )
 atvalott.pack()
 drop2 = OptionMenu( root , clicked , *options ) 
 drop2.pack()
