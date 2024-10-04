@@ -35,8 +35,6 @@ clicked2.set(felsorolas[0])
 drop2 = OptionMenu(root, clicked2, *felsorolas)
 
 
-
-
 #adatbekero fuggveny (mertekegysegek, atvaltando szam)
 def bekeres():
     #a beolvasott ertek megszerzese es vizsgalata
