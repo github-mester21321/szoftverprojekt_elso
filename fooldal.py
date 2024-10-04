@@ -65,14 +65,12 @@
 # from tkinter import *
 
 # # create object 
-# root = Tk() 
+# master = Tk() 
 
 # # create button to implement destroy() 
-# Button(root, text="Quit", command=root.destroy).pack() 
+# Button(master, text="Quit", command=master.destroy).pack() 
 
-# root.mainloop() 
-
-
+# master.mainloop() 
 
 
 
@@ -84,19 +82,25 @@
 
 
 
-# # This will import all the widgets
-# # and modules which are available in
-# # tkinter and ttk module
-# from tkinter import *
-# from tkinter.ttk import *
+
+
+# This will import all the widgets
+# and modules which are available in
+# tkinter and ttk module
+from tkinter import *
+from tkinter.ttk import *
 # import tomeg_atvalto
 
-# master = Tk()
-# master.title("Acvsf")
-# master.geometry("200x200")
+master = Tk()
+master.title("Oldalválasztó ablak")
+master.geometry("200x200")
+
+def megNyito():
+    import tomeg_atvalto
 
 
-# myButton = Button(master, text="Click me!", command=tomeg_atvalto).pack()
+myButton = Button(master, text="Megnyitás", command=megNyito).pack()
 
+Button(master, text="Bezárás", command=master.destroy).pack() 
 
-# master.mainloop()
+master.mainloop()

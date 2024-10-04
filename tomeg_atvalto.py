@@ -11,7 +11,7 @@ root.title("Mértékegység átváltó")
 
 
 #az ablak meretenek megadasa
-root.geometry("700x700")
+root.geometry("300x500")
 
 
 #a szam/szoveg bekeromezojenek letrehozasa es megjelenitese
