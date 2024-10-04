@@ -156,7 +156,7 @@ ertek = Entry(root, width=30, borderwidth=4)
 ertek.pack()
 
 mertekegysegek = ["Milliméter", "Centiméter", "Deciméter", "Méter", "Kilóméter"]
-valtoszam = [["Milliméter", 1], ["Centiméter", 10], ["Deciméte", 100], ["Méter", 1000], ["Kilóméter", 100000]]
+mertekegyseg_valtoszam = [["Milliméter", 1], ["Centiméter", 10], ["Deciméte", 100], ["Méter", 1000], ["Kilóméter", 100000]]
 
 clicked = StringVar()
 clicked.set(mertekegysegek[0])
@@ -184,7 +184,7 @@ def bekeres():
         if mertekegysegek[i] == mertekegyseg_masodik:
             index2 = i
 
-    valtoszam = float(valtoszam[index][1] /valtoszam[index2][1])
+    valtoszam = float(mertekegyseg_valtoszam[index][1] / mertekegyseg_Svaltoszam[index2][1])
     veg_info = Label(root, text=f"{bekert_ertek} {mertekegysegek[index]} = {(bekert_ertek * valtoszam)} {mertekegysegek[index2]}").pack()
 
 
