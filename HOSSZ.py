@@ -76,11 +76,12 @@ atvalott.pack()
 
 
 drop2 = OptionMenu( root , clicked , *options ) 
+
 drop2.pack()
 
-myButton = Button(root, text="Átváltás!", padx=40, pady=10,
+atvalto = Button(root, text="Átváltás!", padx=40, pady=10,
                   command=myClick, fg="black", bg="lightblue")
-myButton.pack()
+atvalto.pack()
 
 
 atvalott = Label(root, text="Az Átváltott hossz: ", width=200, font=('Comic Sans', 15, 'bold') )
