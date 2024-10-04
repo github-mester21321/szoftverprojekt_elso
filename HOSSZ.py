@@ -37,6 +37,12 @@ clicked = StringVar()
   
 # initial menu text 
 clicked.set( "Mértékegységek" ) 
+
+# datatype of menu text 
+clickedit = StringVar() 
+  
+# initial menu text 
+clickedit.set( "Mértékegységek" ) 
   
 # Create Dropdown menu 
 atvaltani = Label(root, text="Írja ide az átváltani kívánt hosszt: ", width=150, font=('Times New Roman', 15, 'bold') )
@@ -45,7 +51,7 @@ atvaltani.pack()
 e = Entry(root, width=50, borderwidth=2)
 e.pack()
 
-dropelso = OptionMenu( root , clicked , *options2 ) 
+dropelso = OptionMenu( root , clickedit , *options2 ) 
 dropelso.pack()
 
 mertekegysegek = ["miliméter","centiméter","deciméter","méter", "kilóméter"]
