@@ -14,35 +14,31 @@ bemutatas.pack()
 
 # Change the label text 
 def show(): 
-    címsor.config( text = clicked.get() ) 
+    címsor.config( text = clicked1.get() ) 
   
-# Dropdown menu options 
-options = [ 
-    "Miliméter",
-    "Centiméter",
-    "Deciméter", 
-    "Méter", 
-    "Kilóméter"
-] 
-options2 = [ 
-    "Miliméter",
-    "Centiméter",
-    "Deciméter", 
-    "Méter", 
-    "Kilóméter"
-] 
+# Dropdown menu options
+clicked1 = StringVar() 
+clicked2 = StringVar()
+mertekegysegek = ["Miliméter","Centiméter","Deciméter","Méter", "Kilóméter"]
+clicked1.set(mertekegysegek[0])
+clicked2.set(mertekegysegek[0]) 
+dropelso = OptionMenu( root , clicked1 , *mertekegysegek )  
+drop2 = OptionMenu( root , clicked2 , *mertekegysegek ) 
   
 # datatype of menu text 
-clicked = StringVar() 
+
   
 # initial menu text 
-clicked.set( "Mértékegységek" ) 
-
+clicked1.set( "Mértékegységek1" ) 
+clicked2.set( "Mértékegységek2" ) 
 # datatype of menu text 
 clickedit = StringVar() 
+clickedit = StringVar()
+
   
 # initial menu text 
-clickedit.set( "Mértékegységek" ) 
+
+
   
 # Create Dropdown menu 
 atvaltani = Label(root, text="Írja ide az átváltani kívánt hosszt: ", width=150, font=('Times New Roman', 15, 'bold') )
@@ -51,31 +47,39 @@ atvaltani.pack()
 e = Entry(root, width=50, borderwidth=2)
 e.pack()
 
-dropelso = OptionMenu( root , clickedit , *options2 ) 
-dropelso.pack()
 
-mertekegysegek = ["miliméter","centiméter","deciméter","méter", "kilóméter"]
+
+
 atvaltok = [0.0001,  0.01  ,0.1  ,1  ,1000  ]
 
-megadottertek = e.get()
-def szamolo():
-    print(megadottertek)
+dropelso.pack()
+
+
+# def szamolo():
+#     vegsoosszeg = 0
+#     egyseg = dropelso.pack()
+#     for i in mertekegysegek:
+#         if 
+       
     
-szamolo()
-    
- 
+# szamolo():
+
+
+masodik = clicked1.get()
+
+egyseg = drop2
 def myClick():
     # a begépelt szöveg tartalma jelenik meg
-    kiiras = e.get()
-    myLabel = Label(root, text=kiiras)
-    myLabel.pack()
+    myLabel = Label(root, text=e.get()).pack()
+    mymertekegyseg = Label(root, text=masodik).pack()
+    
     
 
 atvalott = Label(root, text="Válassza ki azt a mértékegységet amibe átváltani szeretné:", width=150, font=('Times New Roman', 15, 'bold') )
 atvalott.pack()
 
 
-drop2 = OptionMenu( root , clicked , *options ) 
+
 
 drop2.pack()
 
