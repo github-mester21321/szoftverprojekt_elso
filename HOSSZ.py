@@ -48,7 +48,7 @@ def bekeres():
         if mertekegysegek[i] == mertekegyseg_masodik:
             index2 = i
 
-    valtoszam = float(mertekegyseg_valtoszam[index][1] / mertekegyseg_Svaltoszam[index2][1])
+    valtoszam = float(mertekegyseg_valtoszam[index][1] / mertekegyseg_valtoszam[index2][1])
     veg_info = Label(root, text=f"{bekert_ertek} {mertekegysegek[index]} = {(bekert_ertek * valtoszam)} {mertekegysegek[index2]}").pack()
 
 
