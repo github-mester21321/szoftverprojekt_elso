@@ -32,8 +32,15 @@ clicked = StringVar()
 clicked.set( "Mértékegységek" ) 
   
 # Create Dropdown menu 
-drop = OptionMenu( root , clicked , *options ) 
-drop.pack() 
+atvaltani = Label(root, text="Írja ide az átváltani kívánt hosszt: ")
+atvaltani.pack()
+drop1 = OptionMenu( root , clicked , *options ) 
+drop1.pack() 
+
+atvalott = Label(root, text="Az Átváltott hossz: ")
+atvalott.pack()
+drop2 = OptionMenu( root , clicked , *options ) 
+drop2.pack()
 
 def myClick():
     # a begépelt szöveg tartalma jelenik meg
@@ -42,11 +49,13 @@ def myClick():
     myLabel.pack()
 
 
+
 # gomb -> Button() függvény, hova tesszük, mi a szöveg, padx=belső margó - vízszintes, pady=belső margó - függőleges, mi az állapota,pl state=DISABLED, eseményt társítani-zárójel nélkül!!, szöveg és háttérszín(HEX is)
 myButton = Button(root, text="Átváltás!", padx=40, pady=10,
                   command=myClick, fg="black", bg="lightblue")
 
 myButton.pack()
+
   
 # Execute tkinter 
 root.mainloop() 
