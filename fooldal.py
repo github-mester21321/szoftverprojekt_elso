@@ -61,16 +61,16 @@
 
 
 
-# # import required module 
-# from tkinter import *
+# import required module 
+from tkinter import *
 
-# # create object 
-# master = Tk() 
+# create object 
+master = Tk() 
 
-# # create button to implement destroy() 
-# Button(master, text="Quit", command=master.destroy).pack() 
+# create button to implement destroy() 
+Button(master, text="Quit", command=master.destroy).pack() 
 
-# master.mainloop() 
+master.mainloop() 
 
 
 

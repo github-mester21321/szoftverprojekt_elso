@@ -2,14 +2,22 @@
 from tkinter import *
 
 root = Tk()
+#Ablak címe
 root.title("Mértékegység átváltó")
-#root.geometry("700x700")
-címsor = Label( root , text = "HOSSZ MÉRTÉKEGYSÉG ÁTVÁLTÓ ",  fg="blue", borderwidth=10, font=('Comic Sans', 20, 'bold') ) 
+
+#Címsor
+címsor = Label( root , text = "HOSSZ MÉRTÉKEGYSÉG ÁTVÁLTÓ ",  fg="blue", borderwidth=10, font=('Comic Sans', 26, 'bold') ) 
 címsor.grid(row=0, column=0, columnspan=2, pady=10)
-bemutatas = Label( root , text = "(Ezzel az alkalmazással mértékegységeket tud, tetszés szerint átváltani) ", fg="blue", borderwidth=5,  font=('Comic Sans', 10, 'bold')) 
+
+#Bemutató szöveg
+bemutatas = Label( root , text = "(Ezzel az alkalmazással mértékegységeket tud, tetszés szerint átváltani) ", borderwidth=5,  font=('Comic Sans', 10, 'bold')) 
 bemutatas.grid(row=1, column=0, columnspan=2, pady=5)
+
+#Megmutatja hová kell írni a számot
 ertekiras = Label( root , text = "Ide írja a számot:", bg="blue", fg="white", borderwidth=5,  font=('Comic Sans', 13, 'bold')) 
 ertekiras.grid(row=2, column=0, padx=7, pady=10)
+
+#Mértékegységek kiválasztására figyelem felhívó szöveg
 elsoleirasa = Label( root , text = "Válassza ki az első mértékegységet ", bg="blue",fg="white", borderwidth=5,  font=('Comic Sans', 10, 'bold')) 
 
 masodikleirasa = Label( root , text = "Válassza ki a második mértékegységet ",bg="blue",fg="white", borderwidth=5, font=('Comic Sans', 10, 'bold') ) 
@@ -49,7 +57,7 @@ def bekeres():
             index2 = i
 
     valtoszam = float(mertekegyseg_valtoszam[index][1] / mertekegyseg_valtoszam[index2][1])
-    veg_info = Label(root, text=f"{bekert_ertek} {mertekegysegek[index]} = {(bekert_ertek * valtoszam)} {mertekegysegek[index2]}").pack()
+    veg_info = Label(root, text=f"Az átváltott érték: {bekert_ertek} {mertekegysegek[index]} = {(bekert_ertek * valtoszam)} {mertekegysegek[index2]}",font=('Comic Sans', 14, 'bold')).grid(row=6, column=0, columnspan=2, pady=20)
 
 
 myButton = Button(root, text="Bevitel", command=bekeres, padx=40, pady=10, fg="white", bg="blue")
