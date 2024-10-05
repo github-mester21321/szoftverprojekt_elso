@@ -3,21 +3,21 @@ from tkinter import *
 
 root = Tk()
 root.title("Mértékegység átváltó")
-root.geometry("700x700")
-címsor = Label( root , text = "HOSSZ MÉRTÉKEGYSÉG ÁTVÁLTÓ ", width=200, bg="darkorange", borderwidth=10, font=('Comic Sans', 20, 'bold') ) 
-címsor.pack()
-bemutatas = Label( root , text = "(Ezzel az alkalmazással mértékegységeket tud, tetszés szerint átváltani) ", width=200, bg="darkorange", borderwidth=3 ) 
-bemutatas.pack()
-ertekiras = Label( root , text = "Ide írja a számot:", fg="darkorange",  font=('Comic Sans', 10, 'bold')) 
-ertekiras.pack()
-elsoleirasa = Label( root , text = "Válassza ki az első mértékegységet ", fg="darkorange",  font=('Comic Sans', 10, 'bold')) 
+#root.geometry("700x700")
+címsor = Label( root , text = "HOSSZ MÉRTÉKEGYSÉG ÁTVÁLTÓ ",  fg="blue", borderwidth=10, font=('Comic Sans', 20, 'bold') ) 
+címsor.grid(row=0, column=0, columnspan=2, pady=10)
+bemutatas = Label( root , text = "(Ezzel az alkalmazással mértékegységeket tud, tetszés szerint átváltani) ", fg="blue", borderwidth=5,  font=('Comic Sans', 10, 'bold')) 
+bemutatas.grid(row=1, column=0, columnspan=2, pady=5)
+ertekiras = Label( root , text = "Ide írja a számot:", bg="blue", fg="white", borderwidth=5,  font=('Comic Sans', 13, 'bold')) 
+ertekiras.grid(row=2, column=0, padx=7, pady=10)
+elsoleirasa = Label( root , text = "Válassza ki az első mértékegységet ", bg="blue",fg="white", borderwidth=5,  font=('Comic Sans', 10, 'bold')) 
 
-masodikleirasa = Label( root , text = "Válassza ki a második mértékegységet ",fg="darkorange", font=('Comic Sans', 10, 'bold') ) 
+masodikleirasa = Label( root , text = "Válassza ki a második mértékegységet ",bg="blue",fg="white", borderwidth=5, font=('Comic Sans', 10, 'bold') ) 
 
 
 
 ertek = Entry(root, width=30, borderwidth=4)
-ertek.pack()
+ertek.grid(row=2, column=1, padx=10, pady=10)
 
 mertekegysegek = ["Milliméter", "Centiméter", "Deciméter", "Méter", "Kilóméter"]
 mertekegyseg_valtoszam = [["Milliméter", 1], ["Centiméter", 10], ["Deciméte", 100], ["Méter", 1000], ["Kilóméter", 1000000]]
@@ -52,12 +52,12 @@ def bekeres():
     veg_info = Label(root, text=f"{bekert_ertek} {mertekegysegek[index]} = {(bekert_ertek * valtoszam)} {mertekegysegek[index2]}").pack()
 
 
-myButton = Button(root, text="Bevitel", command=bekeres, padx=40, pady=10, fg="black", bg="darkorange")
-elsoleirasa.pack()
-legordulo1.pack()
-masodikleirasa.pack()
-legordulo2.pack()
+myButton = Button(root, text="Bevitel", command=bekeres, padx=40, pady=10, fg="white", bg="blue")
+elsoleirasa.grid(row=3, column=0, padx=10, pady=10)
+legordulo1.grid(row=3, column=1, padx=10, pady=10)
+masodikleirasa.grid(row=4, column=0, padx=10, pady=10)
+legordulo2.grid(row=4, column=1, padx=10, pady=10)
 
-myButton.pack()
+myButton.grid(row=5, column=0, columnspan=2, pady=20)
 
 root.mainloop()
