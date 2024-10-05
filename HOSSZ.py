@@ -20,7 +20,7 @@ ertek = Entry(root, width=30, borderwidth=4)
 ertek.pack()
 
 mertekegysegek = ["Milliméter", "Centiméter", "Deciméter", "Méter", "Kilóméter"]
-mertekegyseg_valtoszam = [["Milliméter", 1], ["Centiméter", 10], ["Deciméte", 100], ["Méter", 1000], ["Kilóméter", 100000]]
+mertekegyseg_valtoszam = [["Milliméter", 1], ["Centiméter", 10], ["Deciméte", 100], ["Méter", 1000], ["Kilóméter", 1000000]]
 
 clicked = StringVar()
 clicked.set(mertekegysegek[0])
