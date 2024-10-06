@@ -14,7 +14,7 @@ bemutatas = Label( root , text = "(Ezzel az alkalmazással mértékegységeket t
 bemutatas.grid(row=1, column=0, columnspan=2, pady=5)
 
 #Megmutatja hová kell írni a számot
-ertekiras = Label( root , text = "Ide írja a számot:", bg="blue", fg="white", borderwidth=5,  font=('Comic Sans', 13, 'bold')) 
+ertekiras = Label( root , text = "Ide írja a számot:", bg="blue", fg="white", borderwidth=5,  font=('Comic Sans', 10, 'bold')) 
 ertekiras.grid(row=2, column=0, padx=7, pady=10)
 
 #Mértékegységek kiválasztására figyelem felhívó szöveg
@@ -53,22 +53,22 @@ def bekeres():
     mertekegyseg_elso = clicked.get()
     mertekegyseg_masodik = clicked2.get()
 
-
+    #kivalasztja az első mértékegységet
     for i in range(len(mertekegysegek)):
         if mertekegysegek[i] == mertekegyseg_elso:
             index = i
-
+    #kiválasztja a második mértékegységet
     for i in range(len(mertekegysegek)):
         if mertekegysegek[i] == mertekegyseg_masodik:
             index2 = i
     #osztás/ szorzás
     valtoszam = float(mertekegyseg_valtoszam[index][1] / mertekegyseg_valtoszam[index2][1])
     #vegso kiiratás
-    veg_info = Label(root, text=f"Az átváltott érték: {bekert_ertek} {mertekegysegek[index]} = {(bekert_ertek * valtoszam)} {mertekegysegek[index2]}",font=('Comic Sans', 14, 'bold')).grid(row=6, column=0, columnspan=2, pady=20)
+    vegso_kiiras = Label(root, text=f"Az átváltott érték: {bekert_ertek} {mertekegysegek[index]} = {(bekert_ertek * valtoszam)} {mertekegysegek[index2]}",font=('Comic Sans', 14, 'bold')).grid(row=6, column=0, columnspan=2, pady=20)
 
 
 #Meghívások, Gomb az átváltáshoz, leírások a felhasználó könnyebb tájékozódásához 
-myButton = Button(root, text="Bevitel", command=bekeres, padx=40, pady=10, fg="white", bg="blue")
+myButton = Button(root, text="Bevitel", command=bekeres, padx=40, pady=10, fg="white", bg="blue", font=('Comic Sans', 11, 'bold'))
 #leírásos segítség a 2.hoz
 elsoleirasa.grid(row=3, column=0, padx=10, pady=10)
 #első legördülő
