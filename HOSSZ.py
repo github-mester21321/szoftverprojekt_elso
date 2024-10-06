@@ -31,25 +31,28 @@ ertek.grid(row=2, column=1, padx=10, pady=10)
 mertekegysegek = ["Milliméter", "Centiméter", "Deciméter", "Méter", "Kilóméter"]
 mertekegyseg_valtoszam = [["Milliméter", 1], ["Centiméter", 10], ["Deciméte", 100], ["Méter", 1000], ["Kilóméter", 1000000]]
 
-#Hozzárendelni az első legördűlő menün kiválasztott mértékegységet az értékhez
+#Beállítja az első legördűlő menün kiválasztott mértékegységet az első értékre
 clicked = StringVar()
 clicked.set(mertekegysegek[0])
 
 legordulo1 = OptionMenu(root, clicked, *mertekegysegek)
 
-#Hozzárendelni az második legördűlő menün kiválasztott mértékegységet az átváltáshoz
+#Beállítja második legördűlő menün kiválasztott mértékegységet az első értékre
 clicked2 = StringVar()
 clicked2.set(mertekegysegek[0])
 legordulo2 = OptionMenu(root, clicked2, *mertekegysegek)
 
-#Bekeres
+#Bekeres definiálása
 def bekeres():
+    #beveszi a bekért értéket
     bekert_ertek = ertek.get()
+    #számmá alakítja
     bekert_ertek = int(bekert_ertek)
 
-
+    #hozzárendeli az első és második mértkegységet
     mertekegyseg_elso = clicked.get()
     mertekegyseg_masodik = clicked2.get()
+
 
     for i in range(len(mertekegysegek)):
         if mertekegysegek[i] == mertekegyseg_elso:
@@ -58,18 +61,22 @@ def bekeres():
     for i in range(len(mertekegysegek)):
         if mertekegysegek[i] == mertekegyseg_masodik:
             index2 = i
-
+    #osztás/ szorzás
     valtoszam = float(mertekegyseg_valtoszam[index][1] / mertekegyseg_valtoszam[index2][1])
+    #vegso kiiratás
     veg_info = Label(root, text=f"Az átváltott érték: {bekert_ertek} {mertekegysegek[index]} = {(bekert_ertek * valtoszam)} {mertekegysegek[index2]}",font=('Comic Sans', 14, 'bold')).grid(row=6, column=0, columnspan=2, pady=20)
 
 
 #Meghívások, Gomb az átváltáshoz, leírások a felhasználó könnyebb tájékozódásához 
 myButton = Button(root, text="Bevitel", command=bekeres, padx=40, pady=10, fg="white", bg="blue")
+#leírásos segítség a 2.hoz
 elsoleirasa.grid(row=3, column=0, padx=10, pady=10)
+#első legördülő
 legordulo1.grid(row=3, column=1, padx=10, pady=10)
+#leírásos segítség a 2.hoz
 masodikleirasa.grid(row=4, column=0, padx=10, pady=10)
-legordulo2.grid(row=4, column=1, padx=10, pady=10)
-
+#masodik legordulo
+legordulo2.grid(row=4, column=1, padx=20, pady=10)
 #Végeredmény kiiratása!
 myButton.grid(row=5, column=0, columnspan=2, pady=20)
 
