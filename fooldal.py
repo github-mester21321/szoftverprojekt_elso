@@ -1,106 +1,41 @@
-# # This will import all the widgets
-# # and modules which are available in
-# # tkinter and ttk module
-# from tkinter import *
-# from tkinter.ttk import *
-
-# # creates a Tk() object
-# master = Tk()
-
-# # sets the geometry of main 
-# # root window
-# master.geometry("200x200")
-
-
-# # function to open a new window 
-# # on a button click
-# def openNewWindow():
-	
-# 	# Toplevel object which will 
-# 	# be treated as a new window
-# 	newWindow = Toplevel(master)
-
-# 	# sets the title of the
-# 	# Toplevel widget
-# 	newWindow.title("New Window")
-
-# 	# sets the geometry of toplevel
-# 	newWindow.geometry("200x200")
-
-# 	# A Label widget to show in toplevel
-# 	Label(newWindow, 
-# 		text ="This is a new window").pack()
-
-
-# label = Label(master, 
-# 			text ="This is the main window")
-
-# label.pack(pady = 10)
-
-# # a button widget which will open a 
-# # new window on button click
-# btn = Button(master, 
-# 			text ="Click to open a new window", 
-# 			command = openNewWindow)
-# btn.pack(pady = 10)
-
-# # mainloop, runs infinitely
-# mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# # import required module 
-# from tkinter import *
-
-# # create object 
-# master = Tk() 
-
-# # create button to implement destroy() 
-# Button(master, text="Quit", command=master.destroy).pack() 
-
-# master.mainloop() 
-
-
-
-
-
-
-
-
-
-
-
-
-
-# This will import all the widgets
-# and modules which are available in
+# This will import all the widgets and modules which are available in
 # tkinter and ttk module
 from tkinter import *
-from tkinter.ttk import *
-# import tomeg_atvalto
+# from tkinter.ttk import * # tkinter and ttk module
+import tomeg_atvalto
+import HOSSZ
+
 
 master = Tk()
-master.title("Oldalválasztó ablak")
-master.geometry("200x200")
-
-def megNyito():
-    import tomeg_atvalto
 
 
-myButton = Button(master, text="Megnyitás", command=megNyito).pack()
+# sets the geometry and the title of the main root window
+master.geometry("288x200")
+master.title("Főoldal")
 
-Button(master, text="Bezárás", command=master.destroy).pack() 
 
-master.mainloop()
+# function to open a new window 
+# on a button click
+def openNewWindow():
+    tomeg_atvalto.mainFunction()
+    
+    
+def openNewWindow2():
+    import HOSSZ
+
+
+label = Label(master, text ="Válaszd ki, hogy melyik átváltót szeretnéd használni!").grid(row= 0, columnspan=3, pady=10, padx=5)
+
+
+# a button widget which will open a 
+# new window on button click
+btn = Button(master, text ="Tömeg átváltó", fg="white", bg="green", font="sans 10 bold", command = openNewWindow).grid(row= 1, column=0)
+btn2 = Button(master, text ="Hossz átváltó", fg="white", bg="green", font="sans 10 bold", command = openNewWindow2).grid(row= 1, column=2)
+
+
+#quit button
+bezaro_gomb = Button(master, text="Bezárás", fg="white", bg="red", font="sans 10 bold", command=master.destroy).grid(row=1, column=1)
+
+
+# mainloop, runs infinitely
+mainloop()
