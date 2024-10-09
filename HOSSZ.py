@@ -4,7 +4,6 @@ def foFuggveny():
     root = Tk()
     #Ablak címe
     root.title("Mértékegység átváltó")
-
     #Címsor
     címsor = Label( root , text = "HOSSZ MÉRTÉKEGYSÉG ÁTVÁLTÓ ",  fg="blue", borderwidth=10, font=('Comic Sans', 26, 'bold') ) 
     címsor.grid(row=0, column=0, columnspan=2, pady=10)
@@ -19,10 +18,8 @@ def foFuggveny():
 
     #Mértékegységek kiválasztására figyelem felhívó szöveg
     elsoleirasa = Label( root , text = "Válassza ki az első mértékegységet ", bg="blue",fg="white", borderwidth=5,  font=('Comic Sans', 10, 'bold')) 
-
     masodikleirasa = Label( root , text = "Válassza ki a második mértékegységet ",bg="blue",fg="white", borderwidth=5, font=('Comic Sans', 10, 'bold') ) 
-
-
+    
     #bekeres
     ertek = Entry(root, width=30, borderwidth=4)
     ertek.grid(row=2, column=1, padx=10, pady=10)
