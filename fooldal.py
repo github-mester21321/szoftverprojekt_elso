@@ -21,7 +21,7 @@ def openNewWindow():
     
     
 def openNewWindow2():
-    HOSSZ.asd()
+    HOSSZ.foFuggveny()
 
 
 label = Label(master, text ="Válaszd ki, hogy melyik átváltót szeretnéd használni!").grid(row= 0, columnspan=3, pady=10, padx=5)
