@@ -10,7 +10,7 @@ master = Tk()
 
 
 # sets the geometry and the title of the main root window
-master.geometry("288x200")
+master.geometry("281x200")
 master.title("Főoldal")
 
 
@@ -24,13 +24,13 @@ def openNewWindow2():
     HOSSZ.foFuggveny()
 
 
-label = Label(master, text ="Válaszd ki, hogy melyik átváltót szeretnéd használni!").grid(row= 0, columnspan=3, pady=10, padx=5)
+label = Label(master, text ="Válaszd ki, hogy melyik \n átváltót szeretnéd használni!", font="sans 12 bold").grid(row= 0, columnspan=3, pady=10, padx=5)
 
 
 # a button widget which will open a 
 # new window on button click
-btn = Button(master, text ="Tömeg átváltó", fg="white", bg="green", font="sans 10 bold", command = openNewWindow).grid(row= 1, column=0)
-btn2 = Button(master, text ="Hossz átváltó", fg="white", bg="green", font="sans 10 bold", command = openNewWindow2).grid(row= 1, column=2)
+btn = Button(master, text ="Tömeg átváltó", fg="white", bg="green", font="sans 10 bold", command = openNewWindow).grid(row= 1, column=0, padx=(5, 5))
+btn2 = Button(master, text ="Hossz átváltó", fg="white", bg="green", font="sans 10 bold", command = openNewWindow2).grid(row= 1, column=2, padx=(5, 5))
 
 
 #quit button
